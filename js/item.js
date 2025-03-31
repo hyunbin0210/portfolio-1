@@ -46,63 +46,7 @@ for(let i=0; i<item_img_length; i++) {
         </div>`
 }
 
-// window.onload = function() {
-//     let imgBox = document.querySelector(".item_img_outer"); // 이미지 영역
-//     let img = document.querySelector(".item_img_inner img"); // 확대할 이미지
-//     let lens = document.createElement("div"); // 돋보기 생성
-
-//     lens.classList.add("magnifier-lens");
-//     imgBox.appendChild(lens); // 이미지 위에 돋보기 추가
-
-//     imgBox.addEventListener("mousemove", function(e) {
-//         let { left, top, width, height } = imgBox.getBoundingClientRect();
-//         let x = e.pageX - left - window.scrollX;
-//         let y = e.pageY - top - window.scrollY;
-
-//         lens.style.left = `${x - 75}px`;
-//         lens.style.top = `${y - 75}px`;
-//         lens.style.display = "block";
-//         lens.style.backgroundImage = `url(${img.src})`;
-//         lens.style.backgroundPosition = `-${x * 2 + 75}px -${y * 2 + 75}px`;
-//     });
-
-//     imgBox.addEventListener("mouseleave", function() {
-//         lens.style.display = "none";
-//     });
-// };
-
-window.onload = function() {
-    let imgBox = document.querySelector(".item_img_outer"); // 이미지 영역
-    let img = document.querySelector(".item_img_inner img"); // 확대할 이미지
-    let lens = document.createElement("div"); // 돋보기 생성
-
-    lens.classList.add("magnifier-lens");
-    imgBox.appendChild(lens); // 이미지 위에 돋보기 추가
-
-    let zoomLevel = 1.5; // 확대 배율 (2배 확대)
-    let lensSize = 200; // 돋보기 크기 (원형)
-
-    imgBox.addEventListener("mousemove", function(e) {
-        let { left, top, width, height } = imgBox.getBoundingClientRect();
-        let x = e.clientX - left; // 이미지 박스 내부 X 좌표
-        let y = e.clientY - top;  // 이미지 박스 내부 Y 좌표
-
-        // 돋보기 위치 설정 (마우스 중심 정렬)
-        lens.style.left = `${x - lensSize / 2}px`;
-        lens.style.top = `${y - lensSize / 2}px`;
-        lens.style.display = "block";
-        
-        // 배경 이미지 설정 (확대된 이미지 표시)
-        lens.style.backgroundImage = `url(${img.src})`;
-        lens.style.backgroundSize = `${width * zoomLevel}px ${height * zoomLevel}px`;
-        lens.style.backgroundPosition = `-${x * zoomLevel - lensSize / 2}px -${y * zoomLevel - lensSize / 2}px`;
-    });
-
-    imgBox.addEventListener("mouseleave", function() {
-        lens.style.display = "none";
-    });
-};
-
+let num = 0;
 function slide(oPos, cIdx, cPos) {
     if(btn_chk) {
         item_img_sub_box[idx].classList.remove('active')
@@ -117,7 +61,7 @@ function slide(oPos, cIdx, cPos) {
             
             // 들어올 판 - 우측에서 들어오기
             item_img_inner[cIdx].style.left = `${cPos*(100 - posX)}%`;
-            
+            num = cIdx;
             posX+=1;
             if(posX > 100) {
                 btn_chk = true;
@@ -168,6 +112,36 @@ for(let i=0; i<item_img_length; i++) {
         item_img_sub_box[i].style.width = `calc((100% - (15px * ${item_img_length-1})) / ${item_img_length})`
     }
 }
+
+window.onload = function() {
+    let imgBox = document.querySelector(".item_img_outer");
+    let img2 = document.querySelector(".item_img_sub_box img")
+    let lens = document.createElement("div");
+
+    lens.classList.add("magnifier-lens");
+    imgBox.appendChild(lens);
+
+    let zoomLevel = 1.5;
+    let lensSize = 200;
+
+    imgBox.addEventListener("mousemove", function(e) {
+        let img = document.querySelectorAll(".item_img_inner img")[num];
+        let { left, top, width, height } = imgBox.getBoundingClientRect();
+        let x = e.clientX - left;
+        let y = e.clientY - top;
+        lens.style.left = `${x - lensSize / 2}px`;
+        lens.style.top = `${y - lensSize / 2}px`;
+        lens.style.display = "block";
+        
+        lens.style.backgroundImage = `url(${img.src})`;
+        lens.style.backgroundSize = `${width * zoomLevel}px ${height * zoomLevel}px`;
+        lens.style.backgroundPosition = `-${x * zoomLevel - lensSize / 2}px -${y * zoomLevel - lensSize / 2}px`;
+    });
+
+    imgBox.addEventListener("mouseleave", function() {
+        lens.style.display = "none";
+    });
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
