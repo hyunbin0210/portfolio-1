@@ -140,6 +140,7 @@ for (let i = 0; i < h_R_btn_icon.length; i++) {
 let login_pan = document.getElementsByClassName('login_pan')[0]
 let register_pan = document.getElementsByClassName('register_pan')[0]
 let LR_close_btn = document.getElementsByClassName('LR_close_btn')
+let cart_img = document.getElementsByClassName('cart_img')[0]
 h_R_btn_icon[0].addEventListener('click', function(){
     cart_pan.classList.remove('active')
     overlay.classList.remove('active')
@@ -162,6 +163,11 @@ h_R_btn_icon[2].addEventListener('click', function(){
     login_register_pan.classList.remove('active')
     cart_pan.classList.toggle('active')    
     overlay.classList.toggle('active')
+})
+cart_img.addEventListener('click', function(){
+    cart_pan.classList.remove('active')    
+    overlay.classList.remove('active')
+    h_R_btn_icon[2].classList.remove('img_yellow')
 })
 for(let i=0; i<LR_close_btn.length; i++) {
     LR_close_btn[i].addEventListener('click', function(){
