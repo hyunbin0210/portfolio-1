@@ -1,0 +1,100 @@
+.main {
+    margin-top: 80px;
+    width: 100%;
+    /* height: 1000px; */
+}
+
+.breadcrumbs {
+    margin: 0;
+    padding: 20px 0 50px 0;
+}
+
+.breadcrumbs_span {
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.page_title {
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.page_desc {
+    font-size: 14px;
+}
+.cate_sel {
+    margin: 15px 0;
+}
+.cate_sel select {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-right: 15px;
+    background-color: #fff;
+    border: none;
+    appearance: none;
+    background: url(../img/koenigsegg/full/accordion_arrow.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 3px) center;
+    background-size: 13px;
+}
+
+
+.item_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* height: 100%; */
+    margin-bottom: 20px;
+}
+.item_box {
+    width: calc((100% - (20px * 3)) / 4);
+    /* height: 100%; */
+    font-size: 17px;
+    background: #fff;
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+.item_box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.item_name {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.item_price {
+    font-size: 14px;
+}
+
+.item_box_outer {
+    position: relative;
+    padding-top: 115%;
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+.item_box_inner {
+    box-sizing: border-box;
+}
+
+.item_box_outer img {
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item_box_outer img:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+}

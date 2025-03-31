@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/koenigsegg/full/faviconV2.png">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="./js/koenigsegg_shop_data.js"></script>
+    <script src="./js/get_cate_url_info.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="pan_wrap"></div>
+            <div class="overlay"></div>
+            <div class="search_bar">
+                <form action="#">
+                    <label for="search_input"></label>
+                    <input type="search" id="search_input" name="search_input">
+                </form>
+            </div>
+            <!-- ///////////////////////////////////////////////////////////////////////////// -->
+            <div class="login_register_pan">
+                <div class="login_pan active">
+                    <div class="login_title">
+                        <h2>Log in</h2>
+                        <img src="./img/koenigsegg/full/cross.svg" alt="" class="LR_close_btn">
+                    </div>
+                    <form action="#" class="login_form">
+                        <p class="login_uid">
+                            <label for="login_username">Username or email</label>
+                            <input type="text" name="login_username" id="login_username">
+                        </p>
+                        <p class="login_pwd">
+                            <label for="login_password">Password
+                                <a href="#">Forgot password?</a>
+                            </label>
+                            <input type="password" name="login_password" id="login_password">
+                        </p>
+                        <p class="login_btn">
+                            <button type="submit" name="login" value="Login">Login</button>
+                        </p>
+                    </form>
+                    <div class="login_signup">
+                        Don't have an account?
+                        <a class="switch_tab" href> Sign up</a>
+                    </div>
+                </div>
+                <!-- ///////////////////////////////////////////////////////////////////////////// -->
+                <div class="register_pan">
+                    <div class="register_title">
+                        <h2>Sign up</h2>
+                        <img src="./img/koenigsegg/full/cross.svg" alt="" class="LR_close_btn">
+                    </div>
+                    <form action="#" class="register_form">
+                        <p class="register_uid">
+                            <label for="register_username">Email address</label>
+                            <input type="text" name="register_username" id="register_username">
+                        </p>
+                        <p class="register_pwd">
+                            <label for="register_password">Password</label>
+                            <input type="password" name="register_password" id="register_password">
+                        </p>
+                        <p class="register_pwd_chk">
+                            <label for="register_password_chk">Confirm Password</label>
+                            <input type="password" name="register_password_chk" id="register_password_chk">
+                        </p>
+                        <p class="register_btn">
+                            <button type="submit" name="register" value="Register">Create an account</button>
+                        </p>
+                    </form>
+                    <div class="register_signup">
+                        Already have an account?
+                        <a class="switch_tab" href> Log in</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <div class="cart_pan">
+                <div class="cart_title">
+                    <h3>Shopping Cart</h3>
+                    <img src="./img/koenigsegg/full/cross.png" alt="">
+                </div>
+                <div class="cart_item">
+                    <p>No products in the cart.</p>
+                </div>
+            </div>
+            <div class="h_wrap">
+                <div class="content_box h_wrap_box">
+                    <div class="h_nav">
+                        <ul class="h_L_ul">
+                            <li class="h_L_li h_L_li0">
+                                <a href="product.html?cateNo=0">WEARABLES</a>
+                                <div class="hover_menu wearables_menu">
+                                    <ul class="sub_ul sub_ul1 sub_ul1_L">
+                                        <li class="sub_li_top">
+                                            <a href="#">READY TO WEAR UNISEX</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">30 Years of Performence</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Outerwear</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">T-shirts and tops</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Hoodies and sweetshirts</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Shirts and polo shirts</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Pants and joggers</a>
+                                        </li>
+                                        <li class="sub_li sub_li_bot">
+                                            <a href="#">Swimwear</a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="sub_ul sub_ul1 sub_ul1_C">
+                                        <li class="sub_li_top">
+                                            <a href="#">ACCESSORIES</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Jewelry</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Headwear</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Bags</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Eyewear</a>
+                                        </li>
+                                        <li class="sub_li sub_li_bot">
+                                            <a href="#">Add-ons</a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="sub_ul sub_ul1 sub_ul1_R">
+                                        <li class="sub_li_top">
+                                            <a href="#">KIDS</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">T-shirts</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Hoodies and sweatshirts</a>
+                                        </li>
+                                        <li class="sub_li sub_li_bot">
+                                            <a href="#">Babywear</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="h_L_li h_L_li1">
+                                <a href="#">COLLECTIBLES</a>
+                                <div class="hover_menu collet_menu">
+                                    <ul class="sub_ul sub_ul2 sub_ul2_L">
+                                        <li class="sub_li_top">
+                                            <a href="#">PRINTED</a>
+                                        </li>
+                                        <li class="sub_li sub_li_bot">
+                                            <a href="#">Megazines and notebooks</a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="sub_ul sub_ul2 sub_ul2_R">
+                                        <li class="sub_li_top">
+                                            <a href="#">MEMORABILIA</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">View all</a>
+                                        </li>
+                                        <li class="sub_li">
+                                            <a href="#">Toys</a>
+                                        </li>
+                                        <li class="sub_li sub_li_bot">
+                                            <a href="#">Scale models</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="h_L_li h_L_li2">
+                                <a href="product.html?cateNo=1">GIFTS</a>
+                            </li>
+                            <li class="h_L_li h_L_li3">
+                                <a href="product.html?cateNo=2">GHOST GLEAM</a>
+                            </li>
+                        </ul>
+                        <div class="pan pan0"></div>
+                        <div class="pan pan1"></div>
+                        <div class="pan_under pan_under0"></div>
+                        <div class="pan_under pan_under1"></div>
+                    </div>
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1 class="blind">로고</h1>
+                        </a>
+                    </div>
+                    <div class="h_R">
+                        <div class="h_R_btn search_btn">
+                            <img src="./img/koenigsegg/full/search_icon.svg" alt="" class="h_R_btn_icon">
+                        </div>
+                        <div class="h_R_btn login_btn">
+                            <img src="./img/koenigsegg/full/user_icon.svg" alt="" class="h_R_btn_icon">
+                        </div>
+                        <div class="h_R_btn cart_btn">
+                            <img src="./img/koenigsegg/full/cart_icon.svg" alt="" class="h_R_btn_icon">
+                        </div>
+                        <!-- <div class="h_R_btn lang_btn">
+                            <select class="sel" id="lang_sel">
+                                <option value="usd">USD</option>
+                                <option value="eur">EUR</option>
+                                <option value="sek">SEK</option>
+                            </select>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+        <main class="main">
+            <div class="content_box">
+                <p class="breadcrumbs">
+                    <span class="breadcrumbs_span">
+                        <span>
+                            <a href="index.html">Start</a>
+                        </span> / 
+                        <span class="breadcrumb_product" aria-current="page"></span>
+                    </span>
+                </p>
+                <h1 class="page_title"></h1>
+                <div class="page_desc"></div>
+                <div class="cate_sel">
+                    <form action="#">
+                        <select name="orderby" id="orderby">
+                            <option disabled>Sort by</option>
+                            <option value="default">Deafault Sorting</option>
+                            <option value="popularity">Sort by popularity</option>
+                            <option value="date">Sort by latest</option>
+                            <option value="price_LH">Sort by price: low to high</option>
+                            <option value="price_HL">Sort by price: high to low</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="item_list"></div>
+
+
+            </div>
+        </main>
+        <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+        <footer class="footer">
+            <div class="content_box">
+                <div class="f_top">
+                    <div class="f_top_L">
+                        <div class="f_top_L_top">
+                            <span>
+                                <h2>
+                                    <p>The</p>
+                                    <p class="p_R">Show</p>
+                                    <p>Must<br>Go on</p>
+                                </h2>
+                            </span>
+                        </div>
+                        <div class="f_top_L_bot">
+                            <a href="https://www.instagram.com/koenigsegg" target="_blank">
+                                <img src="./img/koenigsegg/full/instagram.svg" alt="">
+                            </a>
+                            <a href="https://www.facebook.com/KoenigseggAutomotiveAB" target="_blank">
+                                <img src="./img/koenigsegg/full/facebook.svg" alt="">
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCZJHWJZmE2B_fPwt5HMjVjQ" target="_blank">
+                                <img src="./img/koenigsegg/full/youtube.svg" alt="">
+                            </a>
+                            <a href="https://www.linkedin.com/company/koenigsegg-automotive-ab" target="_blank">
+                                <img src="./img/koenigsegg/full/linkedin.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+                    <div class="f_top_R">
+                        <div class="f_top_R_top">
+                            <P>Be the first with the latest news and take advantage of our special offers</P>
+                            <form action="#">
+                                <div class="f_top_R_top_newsletter">
+                                    <div class="f_top_R_top_subscribe">
+                                        <input type="email" name="email" placeholder="Enter your email address">
+                                        <input type="submit" value="Subscribe" name="sub_submit">
+                                    </div>
+                                    <label for="chk">
+                                        <input type="checkbox" name="chk" id="chk" required>
+                                        <a href="#" target="_blank">I agree to the terms of Koenigsegg's privacy
+                                            policy.</a>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="f_top_R_bot">
+                            <div class="f_top_R_bot_menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Wearables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Collectibles</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="f_top_R_bot_menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Client Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Terms & Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="f_bot">
+                    <div class="f_bot_menu">
+                        <ul>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Cookie Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Legal Disclaimer</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="f_bot_icon">
+                        <a href="index.html">
+                            <img src="./img/koenigsegg/full/cropped-Shield-01.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script defer src="./js/header.js"></script>
+    <script defer src="./js/product.js"></script>
+</body>
+
+</html>
